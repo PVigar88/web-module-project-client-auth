@@ -1,19 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <nav>
-          <Link to="/login">Login</Link>
-          <Link to="" onClick={logout}>
-            Logout
-          </Link>
-        </nav>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <nav>
+            <Link to="/login">Login</Link>
+            <Link to="">Logout</Link>
+          </nav>
+          <div>
+            <Switch>
+              <Route path="/login" component={Login} />
+            </Switch>
+          </div>
+        </header>
+      </div>
+    </Router>
   );
 }
 
