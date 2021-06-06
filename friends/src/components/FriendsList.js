@@ -24,7 +24,7 @@ class FriendsList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="friendList">
         {this.state.friends.map((friend) => {
           return <Friend friend={friend} key={friend.id} />;
         })}
