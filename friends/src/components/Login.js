@@ -11,8 +11,10 @@ class Login extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      ...this.state.credentials,
-      [e.target.name]: e.target.value,
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
@@ -22,7 +24,10 @@ class Login extends React.Component {
       .post("http://localhost:5000/api/login", this.state.credentials)
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/protected");
+        this.props.history.push("/friends");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -31,6 +36,7 @@ class Login extends React.Component {
       <div>
         <form onSubmit={this.login}>
           <label>
+            Username:
             <input
               type="text"
               name="username"
@@ -39,6 +45,7 @@ class Login extends React.Component {
             />
           </label>
           <label>
+            Password:
             <input
               type="password"
               name="password"
