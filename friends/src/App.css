@@ -45,3 +45,32 @@ nav {
   background-color: lightslategray;
   color: white;
 }
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.login {
+  background-color: lightslategray;
+  width: 500px;
+  height: 200px;
+  border: white 2px solid;
+  border-radius: 12%;
+}
+
+.login button {
+  width: 60%;
+}
+
+.editFriend {
+  background-color: lightslategray;
+  width: 500px;
+  height: 200px;
+  border: white 2px solid;
+  border-radius: 12%;
+  justify-content: left;
+}
